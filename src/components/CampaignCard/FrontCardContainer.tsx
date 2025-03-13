@@ -9,8 +9,9 @@ import {
     SocialIcons,
     SwiperContainer,
     OverlayStyle,
-    StatusBadge, CardContent, PayoutSection, ProgressContainer, ActionButton, BrandHeader
-} from './styles';
+    StatusBadge, CardContent, PayoutSection, ProgressContainer, BrandHeader
+} from './frontCardContainer.styles';
+import { ActionButton } from './styles'
 import { Campaign } from '../../types';
 import { getProgressColor } from '../../data/campaigns';
 import 'swiper/swiper-bundle.css';

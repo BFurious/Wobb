@@ -70,7 +70,7 @@ export const campaigns: Campaign[] = [
     barterValue: 799,
     hiredCount: 78,
     totalSlots: 100,
-    status: 'active',
+    status: 'pending',
     images: [
       healthyfy_1,
       healthyfy_2,
@@ -156,7 +156,7 @@ export const campaigns: Campaign[] = [
     barterValue: 799,
     hiredCount: 98,
     totalSlots: 100,
-    status: 'active',
+    status: 'pending',
     images: [
       healthyfy_1,
       healthyfy_2,

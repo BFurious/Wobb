@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Structure, Hooks, and State Management</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #f9fafb;
+        color: #1f2937;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #3b82f6;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      p {
+        color: #6b7280;
+        margin-bottom: 1rem;
+      }
+      ul,
+      ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        color: #3b82f6;
+      }
+      pre {
+        background: #f3f4f6;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      .section {
+        margin-bottom: 2rem;
+      }
+      .section:last-child {
+        margin-bottom: 0;
+      }
+      .highlight {
+        color: #3b82f6;
+        font-weight: 600;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 2rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Component Structure, Hooks, and State Management</h1>
+
+      <div class="section">
+        <h2>Overview</h2>
+        <p>
+          This document provides an in-depth explanation of the component
+          structure, React hooks, and state management used in the Wobb Web App
+          redesign project. The application is built using a modular and reusable
+          component architecture, with a focus on maintainability and
+          scalability.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Component Structure</h2>
+        <p>
+          The application is divided into <span class="highlight">reusable components</span> and
+          <span class="highlight">pages</span>. Each component is designed to be independent and reusable across
+          the application.
+        </p>
+
+        <h3>1. Header Component</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Displays the navigation bar, logo, and user actions (e.g., notifications, profile dropdown).</li>
+          <li><strong>Key Features</strong>:
+            <ul>
+              <li>Responsive design with a mobile menu.</li>
+              <li>Sticky positioning for easy access.</li>
+              <li>Dropdown menu for user actions.</li>
+            </ul>
+          </li>
+          <li><strong>Files</strong>:
+            <ul>
+              <li><code>Header.tsx</code>: Main component logic.</li>
+              <li><code>Header.styles.ts</code>: Styled-components for styling.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>2. Footer Component</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Displays quick links, customer care options, and social media icons.</li>
+          <li><strong>Key Features</strong>:
+            <ul>
+              <li>Responsive layout with centered alignment on mobile.</li>
+              <li>Clean and professional design.</li>
+            </ul>
+          </li>
+          <li><strong>Files</strong>:
+            <ul>
+              <li><code>Footer.tsx</code>: Main component logic.</li>
+              <li><code>Footer.styles.ts</code>: Styled-components for styling.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>3. CampaignCard Component</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Displays campaign details with a flip animation for additional information.</li>
+          <li><strong>Key Features</strong>:
+            <ul>
+              <li>Flip animation to show more details.</li>
+              <li>Responsive design for mobile, tablet, and desktop.</li>
+              <li>Interactive elements (e.g., buttons, progress bars).</li>
+            </ul>
+          </li>
+          <li><strong>Files</strong>:
+            <ul>
+              <li><code>CampaignCard.tsx</code>: Main component logic.</li>
+              <li><code>CampaignCard.styles.ts</code>: Styled-components for styling.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>4. FilterBar Component</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Allows users to filter campaigns by eligibility and content type.</li>
+          <li><strong>Key Features</strong>:
+            <ul>
+              <li>Horizontal scrolling for mobile devices.</li>
+              <li>Active state styling for selected filters.</li>
+            </ul>
+          </li>
+          <li><strong>Files</strong>:
+            <ul>
+              <li><code>FilterBar.tsx</code>: Main component logic.</li>
+              <li><code>FilterBar.styles.ts</code>: Styled-components for styling.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>5. Pages</h3>
+        <ul>
+          <li><strong>Home Page</strong>: Displays a list of campaigns and featured content.</li>
+          <li><strong>Campaigns Page</strong>: Shows detailed information about individual campaigns.</li>
+          <li><strong>Files</strong>:
+            <ul>
+              <li><code>Home.tsx</code>: Home page logic.</li>
+              <li><code>Campaigns.tsx</code>: Campaigns page logic.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Hooks</h2>
+        <p>
+          React hooks are used extensively to manage state and side effects in
+          functional components.
+        </p>
+
+        <h3>1. useState</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Manages local component state.</li>
+          <li><strong>Examples</strong>:
+            <ul>
+              <li>Toggle mobile menu visibility in the <code>Header</code> component.</li>
+              <li>Manage flip state in the <code>CampaignCard</code> component.</li>
+              <li>Track active filters in the <code>FilterBar</code> component.</li>
+            </ul>
+          </li>
+        </ul>
+        <pre><code>const [isFlipped, setIsFlipped] = useState(false);
+const [activeFilter, setActiveFilter] = useState('all');</code></pre>
+
+        <h3>2. useEffect</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Handles side effects such as data fetching and DOM updates.</li>
+          <li><strong>Examples</strong>:
+            <ul>
+              <li>Fetch campaign data when the component mounts.</li>
+              <li>Add event listeners for window resizing.</li>
+            </ul>
+          </li>
+        </ul>
+        <pre><code>useEffect(() => {
+  fetchCampaigns().then((data) => setCampaigns(data));
+}, []);</code></pre>
+
+        <h3>3. useContext</h3>
+        <ul>
+          <li><strong>Purpose</strong>: Manages global state (e.g., user authentication, theme).</li>
+          <li><strong>Examples</strong>:
+            <ul>
+              <li>Provide theme preferences to all components.</li>
+              <li>Share user authentication state across the app.</li>
+            </ul>
+          </li>
+        </ul>
+        <pre><code>const ThemeContext = createContext('light');
+
+const App = () => (
+  &lt;ThemeContext.Provider value="dark"&gt;
+    &lt;Header /&gt;
+    &lt;MainContent /&gt;
+    &lt;Footer /&gt;
+  &lt;/ThemeContext.Provider&gt;
+);</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>State Management</h2>
+        <p>
+          State management is handled using a combination of
+          <span class="highlight">local state</span> (for component-specific data) and
+          <span class="highlight">global state</span> (for shared data).
+        </p>
+
+        <h3>1. Local State</h3>
+        <ul>
+          <li>Managed using the <code>useState</code> hook.</li>
+          <li><strong>Examples</strong>:
+            <ul>
+              <li><code>isFlipped</code> in <code>CampaignCard</code> to toggle the flip animation.</li>
+              <li><code>activeFilter</code> in <code>FilterBar</code> to track the selected filter.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>2. Global State</h3>
+        <ul>
+          <li>Managed using the <span class="highlight">Context API</span>.</li>
+          <li><strong>Examples</strong>:
+            <ul>
+              <li>User authentication state.</li>
+              <li>Theme preferences (light/dark mode).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>3. State Flow</h3>
+        <ul>
+          <li><strong>Parent to Child</strong>: Props are passed from parent to child components.</li>
+          <li><strong>Child to Parent</strong>: Callback functions are used to update parent state.</li>
+          <li><strong>Global State</strong>: Context API provides state to all components.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Example: State Flow in CampaignCard</h2>
+        <pre><code>const CampaignCard = ({ campaign }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    &lt;FlipContainer $isFlipped={isFlipped}&gt;
+      &lt;FrontContent&gt;
+        &lt;h3&gt;{campaign.brandName}&lt;/h3&gt;
+        &lt;button onClick={() => setIsFlipped(true)}&gt;View Details&lt;/button&gt;
+      &lt;/FrontContent&gt;
+      &lt;BackContent&gt;
+        &lt;p&gt;{campaign.description}&lt;/p&gt;
+        &lt;button onClick={() => setIsFlipped(false)}&gt;Back to Main&lt;/button&gt;
+      &lt;/BackContent&gt;
+    &lt;/FlipContainer&gt;
+  );
+};</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>Folder Structure</h2>
+        <pre><code>src/
+├── components/
+│   ├── Header/
+│   ├── Footer/
+│   ├── CampaignCard/
+│   ├── FilterBar/
+│   └── ... (other components)
+├── pages/
+│   ├── Home.tsx
+│   ├── Campaigns.tsx
+│   └── ... (other pages)
+├── styles/
+│   ├── theme.ts
+│   ├── global.ts
+├── types/
+│   └── index.ts
+├── utils/
+│   └── helpers.ts
+├── App.tsx
+└── index.tsx</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>Design Documentation</h2>
+        <h3>Color Scheme</h3>
+        <ul>
+          <li><strong>Primary Color</strong>: <span class="highlight">#3b82f6</span> (Blue) - Used for buttons, links, and highlights.</li>
+          <li><strong>Secondary Color</strong>: <span class="highlight">#2dd4bf</span> (Teal) - Used for accents and hover effects.</li>
+          <li><strong>Background</strong>: <span class="highlight">#f9fafb</span> (Light Gray) - Provides a clean and modern look.</li>
+          <li><strong>Text Colors</strong>:
+            <ul>
+              <li>Primary: <span class="highlight">#1f2937</span> (Dark Gray) - For headings and important text.</li>
+              <li>Secondary: <span class="highlight">#6b7280</span> (Gray) - For body text and labels.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Typography</h3>
+        <ul>
+          <li><strong>Font Family</strong>: <span class="highlight">Inter</span> (Sans-serif) - Modern and readable.</li>
+          <li><strong>Font Sizes</strong>:
+            <ul>
+              <li>Headings: <span class="highlight">1.5rem</span> - <span class="highlight">2rem</span></li>
+              <li>Body: <span class="highlight">1rem</span></li>
+              <li>Captions: <span class="highlight">0.875rem</span></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Spacing</h3>
+        <ul>
+          <li><strong>Base Unit</strong>: <span class="highlight">8px</span> - Used for consistent margins and padding.</li>
+          <li><strong>Card Padding</strong>: <span class="highlight">1.5rem</span></li>
+          <li><strong>Section Margins</strong>: <span class="highlight">2rem</span></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Key Design Decisions</h2>
+        <ul>
+          <li><strong>Modular Components</strong>:
+            <ul>
+              <li>Each component is self-contained and reusable.</li>
+              <li>Styles are co-located with components using styled-components.</li>
+            </ul>
+          </li>
+          <li><strong>Responsive Design</strong>:
+            <ul>
+              <li>Mobile-first approach with media queries.</li>
+              <li>Flexbox and CSS Grid for layout.</li>
+            </ul>
+          </li>
+          <li><strong>State Management</strong>:
+            <ul>
+              <li>Local state for component-specific data.</li>
+              <li>Context API for global state.</li>
+            </ul>
+          </li>
+          <li><strong>Animations</strong>:
+            <ul>
+              <li>Flip animations for campaign cards.</li>
+              <li>Smooth transitions for hover effects.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Conclusion</h2>
+        <p>
+          This project demonstrates a clean and scalable architecture using
+          React.js. By leveraging hooks and a modular component structure, the
+          application is easy to maintain and extend. The use of styled-components
+          ensures consistent styling, while the Context API provides a simple
+          solution for global state management.
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2023 MyApp. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

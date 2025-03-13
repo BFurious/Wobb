@@ -3,10 +3,10 @@ import { FilterBar } from '../FilterBar/index';
 import {
     BackContent,
     DetailSections,
-    ActionButton,
     DetailPayoutSection,
     EligibilitySection, InstructionSection
-} from './styles';
+} from './backCardContent.styles';
+import { ActionButton } from './styles';
 import { Campaign } from '../../types';
 
 interface BackCardContentProps {
