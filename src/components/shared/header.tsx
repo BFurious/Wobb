@@ -8,7 +8,7 @@ import {
   MobileMenuButton,
   DropdownMenu,
   NotificationBadge,
-} from './Header.styles';
+} from './header.styles';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = React.useState(false);

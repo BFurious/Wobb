@@ -13,10 +13,7 @@ import {
 } from './styles';
 import { Campaign } from '../../types';
 import { getProgressColor } from '../../data/campaigns';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
 
 interface CampaignCardProps {
     campaign: Campaign;

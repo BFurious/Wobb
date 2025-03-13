@@ -5,7 +5,7 @@ import {
   FooterLink,
   SocialIcons,
   FooterText,
-} from './Footer.style';
+} from './footer.style';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {

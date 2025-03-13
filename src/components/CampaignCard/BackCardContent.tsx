@@ -15,7 +15,6 @@ interface BackCardContentProps {
 }
 
 export const BackCardContent: React.FC<BackCardContentProps> = ({
-    campaignDetails,
     setIsFlipped
 }) => {
     const [activeDetailSection, setActiveDetailSection] = useState<string>('eligibility');
