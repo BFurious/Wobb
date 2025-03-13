@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# MyApp - Influencer Marketing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a responsive web application for an influencer marketing platform. It allows influencers to browse campaigns, view details, and apply for opportunities.
 
-Currently, two official plugins are available:
+## Features
+- Responsive design for mobile, tablet, and desktop.
+- Interactive campaign cards with flip animations.
+- Filter and search functionality.
+- User-friendly navigation with a sticky header and footer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (v16 or higher)
+- npm (v8 or higher)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
+1. Fork and Clone the repository:
+   -git clone [https://github.com/your-username/my-app.git](https://github.com/BFurious/Wobb.git)
+2. Enter and install packages in Directory:
+   -cd Wobb
+   -npm i
+   -npm run dev
+   -redirect to http://localhost:5173
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Screenshots
+### Desktop
+![image](https://github.com/user-attachments/assets/abb2ee23-e842-4631-9352-bc48652c8ddb)
+### Tablet
+![image](https://github.com/user-attachments/assets/6cec6e5a-e11b-456e-83db-f485640b6e76)
+### Mobile
+![image](https://github.com/user-attachments/assets/06da6d6f-6256-4ed0-96d8-b99a36bae5c1)
+### More Details
+![image](https://github.com/user-attachments/assets/2a837fd5-d6d5-4f92-b13e-1a955e4406ac)
+### Socials 
+![image](https://github.com/user-attachments/assets/7220feba-4d53-43de-a808-25edda6e7c4b)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Header Footer
+![image](https://github.com/user-attachments/assets/1755d44e-9293-4205-932f-4ddd936e4541)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Mobile Navigation
+![image](https://github.com/user-attachments/assets/04997848-7119-4beb-9a48-b6c8cb6f3fd5)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Desktop Navigation
+![image](https://github.com/user-attachments/assets/bd33025d-98a3-4c25-822d-0ea67da8ef14)
+
